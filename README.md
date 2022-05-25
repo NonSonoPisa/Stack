@@ -36,9 +36,40 @@ ________________________________________________________________________________
 
 -Add
 
-  public void add(String s){
-    if(!isFull()){
-      stack[slotOcc+1] = s;
-      slotOcc++;
+    public void add(String s){
+        if(!isFull()){
+            stack[slotOcc+1] = s;
+            slotOcc++;
+        }
     }
-  }
+
+-Delete
+
+    public void remove(){
+        if(!isEmpty()){
+            stack[slotOcc] = null;
+            slotOcc--;
+        }
+    }
+    
+-Size
+    
+    public int getSize(){
+		return slotOcc;
+	}
+    
+-isFull
+
+    public boolean isFull(){
+		if(slotOcc == DIM){
+			return true;
+		}else return false;
+	}
+
+-isEmpty
+
+    public boolean isEmpty(){
+		if(slotOcc == 0){
+			return true;
+		}else return false;
+	}
